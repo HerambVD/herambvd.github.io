@@ -133,7 +133,7 @@ a:active {
   .service_section_text p{
     letter-spacing: 18px; 
     color:white; 
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
   }
 
   .service_section_2{
