@@ -70,7 +70,7 @@ const MyStory = () => {
               id="bio-title"
               className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white"
             >
-              Who is Abass Dev?
+              Who is Heramb Devbhankar?
             </h2>
 
             <div className="space-y-6">
