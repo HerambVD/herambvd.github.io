@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, User } from "lucide-react";
 import localFont from "next/font/local";
 import Form from "./Form";
-import { Report } from "../";
+// import { Report } from "../";
 import { Responsive } from "@/utils";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
@@ -125,7 +125,7 @@ const Contact = () => {
           <Responsive />
         </div>
       </div>
-      <Report report="contact/page" />
+      {/* <Report report="contact/page" /> */}
     </main>
   );
 };
