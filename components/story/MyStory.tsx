@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { birthday } from '../../helpers';
-import { Report } from '../';
+// import { Report } from '../';
 import { Responsive } from '@/utils';
 
 const biographyContent = [
@@ -91,7 +91,7 @@ const MyStory = () => {
         </main>
       </div>
 
-      <Report report="my-story/page" />
+      {/* <Report report="my-story/page" /> */}
     </article>
   );
 };

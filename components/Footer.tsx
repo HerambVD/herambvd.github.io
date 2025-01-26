@@ -49,9 +49,9 @@ const Footer = () => {
           <ul className="flex gap-6">
             <ImportantLinks href="#projects" text="Projects" />
             <ImportantLinks href="#skill" text="Skills" />
-            <ImportantLinks href="/about" text="About Me" />
-            <ImportantLinks href="/contact" text="Contact Me" />
-            <ImportantLinks href="/resume" text="Resume" />
+            <ImportantLinks href="/#tech-stack" text="Technologies" />
+            {/* <ImportantLinks href="/contact" text="Contact Me" />
+            <ImportantLinks href="/resume" text="Resume" /> */}
           </ul>
         </div>
 

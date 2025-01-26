@@ -5,7 +5,7 @@ import { BsGithub } from "react-icons/bs";
 import { SeeMoreButton } from "../ui";
 import { usePathname } from "next/navigation";
 import Item from "./Item";
-import { Report } from "../";
+// import { Report } from "../";
 import Responsive from "@/utils/googleADS/Responsive";
 
 const Projects = () => {
@@ -75,7 +75,7 @@ const Projects = () => {
         )}
         </div>
       </section>
-      {pathName === "/projects/" && <Report report="projects/page" />}
+      {/* {pathName === "/projects/" && <Report report="projects/page" />} */}
     </>
   );
 };

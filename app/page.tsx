@@ -4,7 +4,7 @@ import Skills from "@/components/skills/Skills";
 import FAQ from "@/components/faq";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/projects/Projects";
-import Report from "@/components/Report";
+// import Report from "@/components/Report";
 import Experience from "@/components/Experience";
 
 export default function page() {
