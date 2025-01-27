@@ -33,7 +33,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: MailIcon,
-    href: "/contact",
+    href: "mailto:heramb1711@gmail.com",
     label: "Email",
     hoverColor: "hover:bg-primary"
   }
