@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "../ui/theme-toggle";
-import { Rss, CodeXml, Contact, CircleUser, History, MenuIcon, Briefcase, Circle } from "lucide-react";
+import { Rss, CodeXml, Contact, CircleUser, History, MenuIcon, Briefcase, Circle, Wrench } from "lucide-react";
 
 interface NavigationItem {
   name: string;
@@ -28,6 +28,7 @@ interface NavigationItemProps {
 
 const NAVIGATION_ITEMS: NavigationItem[] = [
   { name: "Portfolio Home", link: "#", icon: CircleUser },
+  { name: "Tech Stack", link: "#tech-stack", icon: Wrench },
   { name: "Experience", link: "#experience", icon: Briefcase },
   { name: "Projects", link: "#projects", icon: CodeXml},
   // { name: "My Story", link: "/my-story", icon: History },

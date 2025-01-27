@@ -50,8 +50,8 @@ const Footer = () => {
             <ImportantLinks href="#projects" text="Projects" />
             <ImportantLinks href="#skill" text="Skills" />
             <ImportantLinks href="/#tech-stack" text="Technologies" />
-            {/* <ImportantLinks href="/contact" text="Contact Me" />
-            <ImportantLinks href="/resume" text="Resume" /> */}
+            <ImportantLinks href="/my-story" text="More about me" />
+            {/* <ImportantLinks href="/resume" text="Resume" /> */}
           </ul>
         </div>
 
