@@ -41,12 +41,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="Machine Learning, Data Science, web development, mobile app development, portfolio, Heramb Devbhankar"
         />
         <meta name="author" content="Heramb Devbhankar" />
-        <meta property="og:title" content="Heramb- Web and Mobile Developer Portfolio" />
+        <meta property="og:title" content="Heramb- Software Engineer Portfolio" />
         <meta property="og:image" content="" />
         <meta property="og:url" content="" />
         <meta property="og:site_name" content="Heramb Devbhankar Portfolio" />
         <meta property="og:description" content="Discover my work in Machine Learning, web and mobile app development, and more." />
-        <meta name="twitter:title" content="Heramb - Web and Mobile Developer Portfolio" />
+        <meta name="twitter:title" content="Heramb- Software Engineer Portfolio" />
         <meta name="twitter:image" content="" />
         <meta name="twitter:url" content="" />
         <meta name="twitter:card" content="summary_large_image" />
