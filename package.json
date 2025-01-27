@@ -2,7 +2,7 @@
   "name": "heramb-devbhankar",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://herambvd.github.io/",
+  "homepage": "https://herambvd.github.io/herambvd.github.io",
   "scripts": {
     "dev": "next dev",
     "prebuild": "node prebuild.js",
