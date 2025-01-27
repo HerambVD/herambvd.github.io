@@ -139,10 +139,10 @@ const Profile = () => {
                   asChild
                   className="group relative overflow-hidden min-w-[100px] bg-background/80 hover:bg-background dark:hover:text-primary"
                 >
-                  {/* <Link href="/my-story" className="flex dark:text-white items-center justify-center gap-2">
+                  <Link href="/my-story" className="flex dark:text-white items-center justify-center gap-2">
                     More About Me
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </Link> */}
+                  </Link>
                 </Button>
               </div>
             </div>

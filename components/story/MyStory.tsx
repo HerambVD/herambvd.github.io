@@ -51,11 +51,11 @@ const MyStory = () => {
           <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500" />
             <img
-              src="/assets/images/about.webp"
+              src="/assets/images/about.png"
               alt="Portrait of Heramb Devbhankar - Software Engineer"
               className="w-full h-auto object-cover relative z-10"
-              width={1200}
-              height={675}
+              width={900}
+              height={450}
               loading="eager"
             />
           </div>
@@ -66,12 +66,13 @@ const MyStory = () => {
             className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8"
             aria-labelledby="bio-title"
           >
-            <h2
+            <p>Get ready to be blown away! Yep, that’s me in the picture! But what exactly am I up to? The adventure’s just beginning... Stay tuned, you won’t want to miss what’s coming next!</p>
+            {/* <h2
               id="bio-title"
               className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white"
             >
-              Who is Heramb Devbhankar?
-            </h2>
+              Surpised with the picture. Yes, a thats me! Who is Heramb Devbhankar though? Stay tuned for more...
+            </h2> */}
 
             <div className="space-y-6">
               {biographyContent.map((section) => (
