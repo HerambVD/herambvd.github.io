@@ -6,16 +6,24 @@ import SeeMoreButton from "@/components/ui/SeeMoreButton";
 
 const experiences = [
   {
-    title: "Lead Software Engineer",
+    title: "Senior Software Engineer",
+    company: "Apollo Global Management",
+    period: "Nov 2024 - Present",
+    description: "Designed and developed a large-scale risk data management platform for Apollo’s investment and risk teams, enabling efficient retrieval and processing of over ~70,000 rows and 350 columns (≈465 MB) of financial data through scalable APIs and automated workflows. Built and deployed RESTful APIs using Python (FastAPI), optimizing data access with complex SQL Server stored procedures and improving performance with Protobuf serialization and Redis caching for high-volume data visualization. Engineered and orchestrated Temporal workflows to automate data ingestion and risk dataset generation, integrating multiple data sources such as quant models, monthly positions, and risk metrics into robust SQL Server pipelines with polling, scheduling, and fault-tolerant orchestration. Delivered a high-performance automated data pipeline that reduced processing and API response times by over 60%, improved reliability, and became a foundational component of Apollo’s portfolio risk analytics platform.",
+    icon: <FaBriefcase />
+  }
+  ,
+  {
+    title: "Software Engineer",
     company: "SAF-AFTRA Foundation",
-    period: "May 2023 - Present",
+    period: "May 2023 - Oct 2024",
     description: "Led backend development using Python-Django, optimizing data management with Django ORM and implementing email systems to enhance functionality. Streamlined integration with dynamic frontends (iOS and ReactJS), automated deployment pipelines, and implemented scalable solutions to ensure high availability under variable traffic conditions with.",
     icon: <FaBriefcase />,
   },
   {
     title: "Software Engineer",
     company: "Eye Labs Inc",
-    period: "Sep 2022 - May 2023",
+    period: "Sep 2022 - Apr 2023",
     description: "Developed an iOS application in SwiftUI utilizing the Vision framework and machine learning models to detect eye anomalies using the front camera. Integrated advanced UIKit features, implemented mathematical algorithms for facial and eye direction analysis, and established a baseline product for FDA clinical trials, successfully tested on eye patients.",
     icon: <FaBriefcase />,
   },

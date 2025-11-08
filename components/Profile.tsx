@@ -134,7 +134,7 @@ const Profile = () => {
 
               <div className="flex flex-wrap gap-6 justify-center items-center pt-4">
                 <ShimmerDownloadButton text="Download My Resume"/>
-                <Button
+                {/* <Button
                   variant="outline"
                   asChild
                   className="group relative overflow-hidden min-w-[100px] bg-background/80 hover:bg-background dark:hover:text-primary"
@@ -143,7 +143,7 @@ const Profile = () => {
                     More About Me
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
