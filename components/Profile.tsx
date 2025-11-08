@@ -134,16 +134,16 @@ const Profile = () => {
 
               <div className="flex flex-wrap gap-6 justify-center items-center pt-4">
                 <ShimmerDownloadButton text="Download My Resume"/>
-                {/* <Button
+                <Button
                   variant="outline"
                   asChild
                   className="group relative overflow-hidden min-w-[100px] bg-background/80 hover:bg-background dark:hover:text-primary"
                 >
-                  <Link href="/my-story" className="flex dark:text-white items-center justify-center gap-2">
+                  {/* <Link href="/my-story" className="flex dark:text-white items-center justify-center gap-2">
                     More About Me
                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button> */}
+                  </Link> */}
+                </Button>
               </div>
             </div>
           </div>
