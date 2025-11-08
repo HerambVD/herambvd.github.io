@@ -9,8 +9,8 @@ const ShimmerDownloadButton: React.FC<ShimmerDownloadButtonProps> = ({ text }) =
   const handleDownload = () => {
     // Create an invisible anchor element to trigger the download
     const link = document.createElement('a');
-    link.href = '/assets/pdf/resume-heramb-2025.pdf'; // Path to the PDF file
-    link.download = 'resume-heramb-2025.pdf'; // Specify the filename for the downloaded file
+    link.href = '/assets/pdf/heramb-resume-2025_v2.pdf'; // Path to the PDF file
+    link.download = 'heramb-resume-2025_v2.pdf'; // Specify the filename for the downloaded file
     link.click(); // Trigger the download
   };
 
