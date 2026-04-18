@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ShimmerDownloadButton from '@/components/ui/ShimmerDownloadButton';
 import { ArrowRight, FacebookIcon, GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, InstagramIcon } from 'lucide-react';
+import QuickStats from './QuickStats';
 
 // Social links data
 const SOCIAL_LINKS = [
@@ -109,7 +110,7 @@ const Profile = () => {
               <header className="space-y-4">
                 <div className="font-edu-nsw text-2xl md:text-3xl">
                   <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">
-                    Hello World, I am
+                    Welcome, I'm
                   </span>
                 </div>
                 <h1 className="font-orbitron text-4xl md:text-6xl lg:text-7xl">
@@ -117,14 +118,19 @@ const Profile = () => {
                     Heramb Devbhankar
                   </span>
                 </h1>
+                <h2 className="text-xl md:text-2xl font-semibold text-foreground/90">
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    Problem Solver • Scalable Systems • AI Engineer
+                  </span>
+                </h2>
               </header>
 
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                I build scalable products and intelligent systems that solve complex problems. With 6+ years of engineering experience, I specialize in architecting data-intensive platforms (70K+ datasets), implementing AI/LLM-powered applications with RAG, and delivering high-performance solutions. From FDA-approved medical devices to enterprise financial systems, proven ability to ship production-grade software.
+              </p>
 
-              A software engineer with a Master's degree from the University of Southern California and over 6 years of experience. 
-              I specialize in both front-end and back-end development, with expertise in Algorithmic Programming and Machine Learning.
-              I primarily use Python, React, and Swift. I build dynamic Web and iOS apps focusing on seamless user experiences. 
-              Passionate about exploring new technologies, I continually advance my skills in Software Engineering and Machine Learning.
+              <p className="text-sm md:text-base text-muted-foreground/80 font-medium">
+                <strong>Specializations:</strong> Scalable Systems • AI/LLMs & RAG • Full-Stack Development • System Architecture • Cloud Infrastructure
               </p>
 
               <div className="flex items-center gap-2 justify-center md:justify-start text-muted-foreground">
@@ -133,7 +139,7 @@ const Profile = () => {
               </div>
 
               <div className="flex flex-wrap gap-6 justify-center items-center pt-4">
-                <ShimmerDownloadButton text="Download My Resume"/>
+                <ShimmerDownloadButton text="📥 Download Resume"/>
                 <Button
                   variant="outline"
                   asChild
@@ -145,6 +151,8 @@ const Profile = () => {
                   </Link> */}
                 </Button>
               </div>
+
+              <QuickStats />
             </div>
           </div>
         </article>

@@ -2,7 +2,7 @@
 import Profile from "@/components/Profile";
 import Skills from "@/components/skills/Skills";
 import FAQ from "@/components/faq";
-import TechStack from "@/components/TechStack";
+import CapabilityMatrix from "@/components/CapabilityMatrix";
 import Projects from "@/components/projects/Projects";
 // import Report from "@/components/Report";
 import Experience from "@/components/Experience";
@@ -11,7 +11,7 @@ export default function page() {
   return (
     <>
       <Profile />
-      <TechStack/>
+      <CapabilityMatrix />
       <Experience />
       <Projects />
       <Skills />

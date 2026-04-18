@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ExternalLink, GithubIcon, LockKeyhole } from 'lucide-react'
+import { ExternalLink, GithubIcon, LockKeyhole, Zap } from 'lucide-react'
 
 interface HeaderLink {
   url?: string
@@ -24,6 +24,7 @@ interface ItemProps {
   name: string
   description: string
   headerImg: string
+  impact?: string
   seeMore?: SeeMore
   techs: string[]
   headerLinks?: {
@@ -45,6 +46,7 @@ export default function Item({
   name,
   headerImg,
   description,
+  impact,
   seeMore,
   techs,
   headerLinks,
@@ -107,6 +109,14 @@ export default function Item({
           )}
         </div>
 
+        {/* Impact Badge */}
+        {impact && (
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full border border-cyan-200/30 dark:border-cyan-800/30">
+            <Zap className="w-3 h-3 text-cyan-600 dark:text-cyan-400" />
+            <span className="text-xs font-semibold text-cyan-700 dark:text-cyan-300">{impact}</span>
+          </div>
+        )}
+
         {/* Description with subtle animation */}
         <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
           {description}
@@ -119,6 +129,8 @@ export default function Item({
             <Link
               href={seeMore.url || "#"}
               className="text-primary hover:text-primary/80 inline-flex items-center gap-1 group"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {seeMore.text}
               <ExternalLink className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
