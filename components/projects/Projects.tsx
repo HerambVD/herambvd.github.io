@@ -17,7 +17,7 @@ const Projects = () => {
         <div className="grid gap-8 md:grid-cols-2 pb-8">
           <Item
             name="Enterprise Risk Platform"
-            headerImg="/assets/images/stocksearch-webapp.webp"
+            headerImg="https://images.pexels.com/photos/34703257/pexels-photo-34703257.png"
             description="Large-scale data platform processing 70K+ rows of financial data. Built scalable APIs with FastAPI, automated Temporal workflows, and AI insights engine. Reduced API response times by 60%."
             impact="60% Performance Improvement"
             techs={["FastAPI", "Python", "SQL Server", "Kubernetes", "AI/LLMs"]}
@@ -28,7 +28,7 @@ const Projects = () => {
 
           <Item
             name="AI Insights Engine"
-            headerImg="/assets/images/heart-mri-segmentation.webp"
+            headerImg="https://images.pexels.com/photos/37095564/pexels-photo-37095564.jpeg"
             description="AI-driven application using LLMs and vector embeddings to generate contextual insights. Implemented RAG for context-aware responses on large financial datasets."
             impact="Real-time Intelligence"
             techs={["LLMs", "Vector Embeddings", "RAG", "Python", "FastAPI"]}
@@ -39,7 +39,7 @@ const Projects = () => {
 
           <Item
             name="Eye Anomaly Detection"
-            headerImg="/assets/images/stocksearch-ios-app.webp"
+            headerImg="https://images.pexels.com/photos/36159308/pexels-photo-36159308.jpeg"
             description="iOS app using SwiftUI and Vision framework to detect eye anomalies. Implemented facial landmark algorithms. Deployed for FDA clinical trials with real patient testing."
             impact="FDA Clinical Trials"
             techs={["Swift", "SwiftUI", "Vision Framework", "ML"]}

@@ -1,6 +1,7 @@
 {
   "short_name": "Heramb Devbhankar",
-  "name": "Heramb Devbhankar| Software Engineer",
+  "name": "Heramb Devbhankar | Software Engineer & Developer",
+  "description": "Portfolio of Heramb Devbhankar - Software Engineer from USA. Explore projects, skills, and achievements in full-stack development, AI, and cutting-edge technologies.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,25 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "categories": ["productivity", "technology"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
 }
