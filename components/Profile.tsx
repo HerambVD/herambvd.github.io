@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ShimmerDownloadButton from '@/components/ui/ShimmerDownloadButton';
 import { ArrowRight, FacebookIcon, GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, InstagramIcon } from 'lucide-react';
-import QuickStats from './QuickStats';
 
 // Social links data
 const SOCIAL_LINKS = [
@@ -126,11 +125,11 @@ const Profile = () => {
               </header>
 
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                I build scalable products and intelligent systems that solve complex problems. With 6+ years of engineering experience, I specialize in architecting data-intensive platforms (70K+ datasets), implementing AI/LLM-powered applications with RAG, and delivering high-performance solutions. From FDA-approved medical devices to enterprise financial systems, proven ability to ship production-grade software.
+                Senior Software Engineer with 6+ years building scalable systems and AI-powered solutions. Architected enterprise risk platforms processing large financial datasets, reduced API response times by 60% through optimized architectures and Temporal workflows. Developed FDA-approved medical devices and AI insights engines using LLMs with RAG. Proven track record shipping production-grade software from fintech to healthcare, combining deep technical expertise with real-world impact.
               </p>
 
               <p className="text-sm md:text-base text-muted-foreground/80 font-medium">
-                <strong>Specializations:</strong> Scalable Systems • AI/LLMs & RAG • Full-Stack Development • System Architecture • Cloud Infrastructure
+                <strong>Core Expertise:</strong> Enterprise System Architecture • AI/LLMs & RAG • Performance Optimization • Cloud Infrastructure • FDA-Regulated Software
               </p>
 
               <div className="flex items-center gap-2 justify-center md:justify-start text-muted-foreground">
@@ -151,8 +150,6 @@ const Profile = () => {
                   </Link> */}
                 </Button>
               </div>
-
-              <QuickStats />
             </div>
           </div>
         </article>

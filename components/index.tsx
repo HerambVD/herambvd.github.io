@@ -4,7 +4,6 @@ import TechStack from "./TechStack";
 import Projects from "./projects/Projects";
 import Friends from "./friends/Friends";
 import Footer from "./Footer";
-// import Report from "./Report";
 import Copyright from "./Copyright";
 import Contact from "./contact/Contact";
 import CookieConsent from "./ui/CookieConsent";
@@ -16,7 +15,6 @@ export {
   Projects,
   Friends,
   Footer,
-  // Report,
   Copyright,
   Contact,
   FAQ,
