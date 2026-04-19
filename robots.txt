@@ -1,15 +1,28 @@
+# Robots.txt for heramb.tech - SEO optimization
 # This robots.txt file controls crawling of URLs under heramb.tech
 
-
+# Allow all crawlers
 User-agent: *
 Allow: /
+Allow: /projects
+Allow: /contact
+Allow: /my-story
+Allow: /privacy-policy
+Allow: /copyright
 
+# Disallow private/admin areas
 Disallow: /admin/
-Disallow: /*.json
+Disallow: /*.json$
 Disallow: /api/
-Disallow: /_next/*
-Disallow: /static/*
+Disallow: /_next/
+Disallow: /static/
+Disallow: *.webp
+Disallow: *.jpg
+Disallow: *.jpeg
+Disallow: *.png
 
-Crawl-delay: 60
+# Crawl-delay
+Crawl-delay: 1
 
+# Sitemaps
 Sitemap: https://heramb.tech/sitemap.xml

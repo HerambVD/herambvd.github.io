@@ -32,7 +32,7 @@ const capabilities = [
 
 export default function CapabilityMatrix() {
   return (
-    <section id="capabilities" className="pb-16 dark:bg-gray-900">
+    <section id="capabilities" className="pt-16 pb-8 dark:bg-gray-900">
       <div className="container mx-auto px-8 md:px-10 lg:px-20 xl:px-32 pb-8">
         <div className="text-center mb-12">
           <h1 className="font-orbitron text-4xl font-bold dark:text-white text-blue-950 mb-4">

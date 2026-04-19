@@ -83,7 +83,7 @@ const Experience = () => {
   const pathName = usePathname();
 
   return (
-    <section id="experience" className="pb-16 dark:bg-gray-800 bg-gray-100">
+    <section id="experience" className="pt-16 pb-8 dark:bg-gray-800 bg-gray-100">
       <div className="container mx-auto px-8 md:px-10 lg:px-20 xl:px-32 pb-8">
         <h1 className="font-orbitron text-center font-bold dark:text-white text-4xl pb-4 my-4 text-blue-950">
           Professional Experience
