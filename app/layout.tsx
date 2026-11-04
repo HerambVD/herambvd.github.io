@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Orbitron } from "next/font/google";
+import localFont from "next/font/local";
 import { profile } from "@/entities/profile";
 import { Analytics } from "@/features/analytics";
 import { ScrollToTop } from "@/features/scroll-to-top";
@@ -77,10 +77,13 @@ const websiteJsonLd = {
   publisher: { "@id": SCHEMA_IDS.person },
 };
 
-const orbitron = Orbitron({
-  subsets: ["latin"],
+// Self-hosted (SIL Open Font License, see fonts/Orbitron-OFL.txt): the build never depends
+// on downloading from Google Fonts, and visitors' browsers never contact Google for it.
+const orbitron = localFont({
+  src: "./fonts/Orbitron-VariableFont_wght.ttf",
   variable: "--font-orbitron",
-  weight: ["400", "500", "600", "700"],
+  weight: "400 900",
+  display: "swap",
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
