@@ -1,16 +1,11 @@
-import SuspenseLoading from "@/components/ui/SuspenseLoading";
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/shared/lib/page-metadata";
+import { ContactPage } from "@/views/contact";
 
-const  Contact =  dynamic(() => import('@/components/contact/Contact'), {ssr: false, loading: () => <SuspenseLoading />})
+export const metadata: Metadata = pageMetadata({
+  title: "Contact",
+  description: "Get in touch with Heramb Devbhankar, Senior Software Engineer (backend, distributed systems, Generative AI).",
+  path: "/contact",
+});
 
-export const metadata: Metadata = {
-  title: "Contact us - Heramb Devbhankar",
-  description: "Software Engineer | Heramb Devbhankar",
-};
-
-const Page = () => {
-  return <Contact />;
-};
-
-export default Page;
+export default ContactPage;

@@ -1,17 +1,11 @@
-import SuspenseLoading from "@/components/ui/SuspenseLoading";
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/shared/lib/page-metadata";
+import { CopyrightPage } from "@/views/copyright";
 
-export const metadata: Metadata = {
-  title: "Copyright - Heramb Devbhankar",
-  description: "Copyright © 2025 Heramb Devbhankar. All rights reserved.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Copyright",
+  description: "Copyright and terms of use for heramb.tech.",
+  path: "/copyright",
+});
 
-
-const  Copyright =  dynamic(() => import('../../components/Copyright'), {ssr: false, loading: () => <SuspenseLoading />})
-
-const Page = () => {
-  return <Copyright />;
-};
-
-export default Page;
+export default CopyrightPage;

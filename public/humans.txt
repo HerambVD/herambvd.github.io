@@ -1,2 +1,12 @@
-Created by: Heramb Devbhankar
-Location: Los Angeles CA
+/* TEAM */
+Developer: Heramb Devbhankar (Heramb Vijay Devbhankar)
+Role: Senior Software Engineer, Apollo Global Management
+Site: https://www.heramb.tech
+Contact: heramb.hvd@gmail.com
+LinkedIn: https://www.linkedin.com/in/heramb-devbhankar
+GitHub: https://github.com/HerambVD
+Location: Relocating to India from USA
+
+/* SITE */
+Standards: HTML5, CSS3, schema.org JSON-LD, llms.txt
+Components: Next.js, React, TypeScript, Tailwind CSS

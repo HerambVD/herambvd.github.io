@@ -1,11 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
-package-lock.json
 yarn.lock
 
 # testing
@@ -13,7 +9,7 @@ yarn.lock
 
 # next.js
 /.next/
-/out
+/out/
 out.zip
 
 # production
@@ -43,4 +39,3 @@ next-env.d.ts
 
 # editors
 .vscode/
-build-info.json
