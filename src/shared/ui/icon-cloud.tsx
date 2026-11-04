@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useTheme } from "next-themes";
 import { Cloud, renderSimpleIcon, type ICloud } from "react-icon-cloud";
 import type { SimpleIcon } from "simple-icons";
+import { useIsClient } from "@/shared/lib/use-is-client";
 
 const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -25,8 +26,15 @@ const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-/** Rotating 3D sphere of brand logos. */
+/**
+ * Rotating 3D sphere of brand logos.
+ *
+ * Rendered in the browser only: the library generates random element IDs and the
+ * colours depend on the theme, both of which would differ from server-rendered HTML.
+ * A same-sized placeholder keeps the layout from shifting until it mounts.
+ */
 export default function IconCloud({ icons }: { icons: SimpleIcon[] }) {
+  const isClient = useIsClient();
   const { resolvedTheme } = useTheme();
   const light = resolvedTheme === "light";
 
@@ -44,6 +52,8 @@ export default function IconCloud({ icons }: { icons: SimpleIcon[] }) {
       ),
     [icons, light]
   );
+
+  if (!isClient) return <div className="aspect-square w-full" data-testid="icon-cloud-placeholder" />;
 
   return (
     <Cloud {...cloudProps}>
