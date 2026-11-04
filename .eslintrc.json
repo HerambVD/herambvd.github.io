@@ -2,6 +2,177 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
-  }
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "@/entities/*/*",
+              "@/features/*/*",
+              "@/widgets/*/*",
+              "@/views/*/*"
+            ],
+            "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/shared/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/features/*/*",
+                  "@/widgets/*/*",
+                  "@/views/*/*"
+                ],
+                "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+              },
+              {
+                "group": [
+                  "@/entities*",
+                  "@/features*",
+                  "@/widgets*",
+                  "@/views*"
+                ],
+                "message": "FSD: shared/ must not import from any higher layer."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/entities/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/features/*/*",
+                  "@/widgets/*/*",
+                  "@/views/*/*"
+                ],
+                "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+              },
+              {
+                "group": [
+                  "@/entities/*",
+                  "@/features*",
+                  "@/widgets*",
+                  "@/views*"
+                ],
+                "message": "FSD: entities may import only from shared/ (and their own slice, relatively)."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/features/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/features/*/*",
+                  "@/widgets/*/*",
+                  "@/views/*/*"
+                ],
+                "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+              },
+              {
+                "group": [
+                  "@/features/*",
+                  "@/widgets*",
+                  "@/views*"
+                ],
+                "message": "FSD: features may import only from entities/ and shared/."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/widgets/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/features/*/*",
+                  "@/widgets/*/*",
+                  "@/views/*/*"
+                ],
+                "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+              },
+              {
+                "group": [
+                  "@/widgets/*",
+                  "@/views*"
+                ],
+                "message": "FSD: widgets may import only from features/, entities/ and shared/."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/views/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/entities/*/*",
+                  "@/features/*/*",
+                  "@/widgets/*/*",
+                  "@/views/*/*"
+                ],
+                "message": "Import a slice through its public API (its index.ts), e.g. '@/entities/profile'."
+              },
+              {
+                "group": [
+                  "@/views/*"
+                ],
+                "message": "FSD: a view must not import another view."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

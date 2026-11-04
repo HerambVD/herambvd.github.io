@@ -1,17 +1,10 @@
-import SuspenseLoading from "@/components/ui/SuspenseLoading";
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const  PrivacyPolicy =  dynamic(() => import('../../components/PrivacyPolicy'), {ssr: false, loading: () => <SuspenseLoading />})
+import type { Metadata } from "next";
+import { PrivacyPolicyPage } from "@/views/privacy-policy";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Heramb Devbhankar | Portfolio",
-  description: "Privacy Policy for Heramb Devbhankar's portfolio website. Learn how we collect, use, and protect your information.",
-  keywords: "privacy policy, data protection, Heramb Devbhankar privacy, website privacy",
+  title: "Privacy Policy | Heramb Devbhankar",
+  description: "What information heramb.tech collects (Google Analytics and the contact form) and how it is used.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
-const Page = () => {
-  return <PrivacyPolicy />;
-};
-
-export default Page;
+export default PrivacyPolicyPage;

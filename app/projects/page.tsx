@@ -1,17 +1,10 @@
-import dynamic from "next/dynamic";
-import { Metadata } from "next";
-import SuspenseLoading from "@/components/ui/SuspenseLoading";
-
-const  Projects =  dynamic(() => import('../../components/projects/Projects'), {ssr: false, loading: () => <SuspenseLoading />})
+import type { Metadata } from "next";
+import { ProjectsPage } from "@/views/projects";
 
 export const metadata: Metadata = {
-  title: "Heramb Devbhankar - Featured Projects & Work | Software Engineer",
-  description: "Explore the notable projects of Heramb Devbhankar - a software engineer from USA. Full-stack development, AI applications, and enterprise solutions.",
-  keywords: "Heramb projects, Heramb Devbhankar projects, software engineer projects, full-stack development, AI projects, enterprise solutions, portfolio projects",
+  title: "Projects | Heramb Devbhankar, Senior Software Engineer",
+  description: "Featured work by Heramb Devbhankar: cloud-native data platforms, GenAI text-to-SQL agents and open-source NLP.",
+  alternates: { canonical: "/projects" },
 };
 
-const Page = () => {
-  return <Projects />;
-};
-
-export default Page;
+export default ProjectsPage;

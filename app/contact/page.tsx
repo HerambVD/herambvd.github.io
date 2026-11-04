@@ -1,17 +1,10 @@
-import SuspenseLoading from "@/components/ui/SuspenseLoading";
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const  Contact =  dynamic(() => import('@/components/contact/Contact'), {ssr: false, loading: () => <SuspenseLoading />})
+import type { Metadata } from "next";
+import { ContactPage } from "@/views/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Heramb Devbhankar | Get In Touch - Software Engineer",
-  description: "Contact Heramb Devbhankar - Software Engineer from USA. Reach out for collaborations, inquiries, or professional opportunities.",
-  keywords: "contact Heramb, contact Heramb Devbhankar, Heramb Kalyan contact, software engineer contact, reach out, collaboration",
+  title: "Contact | Heramb Devbhankar, Senior Software Engineer",
+  description: "Get in touch with Heramb Devbhankar, Senior Software Engineer (backend, distributed systems, Generative AI).",
+  alternates: { canonical: "/contact" },
 };
 
-const Page = () => {
-  return <Contact />;
-};
-
-export default Page;
+export default ContactPage;

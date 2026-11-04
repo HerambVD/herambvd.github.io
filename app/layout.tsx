@@ -1,127 +1,79 @@
 import "./globals.css";
-import { Orbitron, Edu_NSW_ACT_Foundation } from 'next/font/google';
-import Nav from "../components/navigation/Navigation";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-import Theme from "../context/theme-provider";
-// import HeadScript from "@/components/HeadScript";
+import { Orbitron } from "next/font/google";
+import { profile, socialLinks } from "@/entities/profile";
+import { Analytics } from "@/features/analytics";
+import { ScrollToTop } from "@/features/scroll-to-top";
+import { GA_MEASUREMENT_ID, SITE_NAME, SITE_URL } from "@/shared/config/site";
+import { Footer } from "@/widgets/footer";
+import { Sidebar } from "@/widgets/sidebar";
+import Providers from "./providers";
 
-const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
-const ScrollUp = dynamic(() => import("../components/ui/ScrollUp"), { ssr: false });
-
+const TITLE = `${profile.name} | ${profile.title}`;
+const DESCRIPTION = `Portfolio of ${profile.name}, ${profile.title} specializing in backend systems, distributed systems, cloud-native data platforms and Generative AI.`;
 
 export const metadata: Metadata = {
-  title: "Heramb Devbhankar | Software Engineer & Developer | Portfolio",
-  description: "Portfolio of Heramb Devbhankar - Software Engineer from USA. Explore projects, skills, and achievements in full-stack development, AI, and cutting-edge technologies.",
-  keywords: "Heramb, Heramb Devbhankar, heramb.tech, Developer Heramb, Heramb Kalyan, Heramb USC, Heramb at USC, Heramb Apollo, Heramb SAG AFTRA, Heramb in USA, software engineer, full-stack developer, portfolio, projects, skills, technology",
-  openGraph: {
-    title: "Heramb Devbhankar | Software Engineer & Developer",
-    description: "Discover the portfolio of Heramb Devbhankar - experienced software engineer with expertise in full-stack development, AI, and modern technologies.",
-    url: "https://heramb.tech",
-    siteName: "Heramb Devbhankar Portfolio",
-    type: "website",
+  metadataBase: new URL(SITE_URL),
+  title: `${TITLE} | Portfolio`,
+  description: DESCRIPTION,
+  keywords:
+    "Heramb, Heramb Devbhankar, heramb.tech, Developer Heramb, Heramb USC, Heramb Apollo, Senior Software Engineer, backend engineer, distributed systems, cloud-native data platforms, Generative AI, LLM agents, FastAPI, Kubernetes, portfolio",
+  authors: [{ name: profile.name, url: SITE_URL }],
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { "max-snippet": -1, "max-image-preview": "large", "max-video-preview": -1 },
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Heramb Devbhankar | Software Engineer & Developer",
-    description: "Portfolio of Heramb Devbhankar - Software Engineer from USA",
-  },
-  robots: "index, follow",
-  authors: [{ name: "Heramb Devbhankar" }],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/apple-touch-icon.png",
-    apple: "/apple-touch-icon.png",
-  },
+  openGraph: { title: TITLE, description: DESCRIPTION, siteName: SITE_NAME, type: "website" },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  icons: { icon: "/favicon.ico" },
+  manifest: "/manifest.json",
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent" },
+  themeColor: "#000000",
 };
 
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  variable: '--font-orbitron',
-  weight: ['400', '500', '600', '700'],
-});
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    url: SITE_URL,
+    jobTitle: profile.title,
+    worksFor: { "@type": "Organization", name: profile.company },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "University of Southern California" },
+    sameAs: socialLinks.map((link) => link.href),
+    description: `${profile.headline} ${profile.summary}`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: DESCRIPTION,
+  },
+];
 
-export const eduNSW = Edu_NSW_ACT_Foundation({
-  subsets: ['latin'],
-  variable: '--font-edu-nsw',
-  weight: ['400'], // Only one weight is available for this font
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+  weight: ["400", "500", "600", "700"],
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="keywords"
-          content="Heramb, Heramb Devbhankar, heramb.tech, Developer Heramb, Heramb Kalyan, Heramb USC, Heramb at USC, Heramb Apollo, Heramb SAG AFTRA, Heramb in USA, software engineer, developer, full-stack development, web development, mobile development, AI, machine learning, data science, portfolio, projects, skills, experience, technology, innovation, coding, programming, tech stack, career, professional"
-        />
-        <meta name="author" content="Heramb Devbhankar" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="description" content="Portfolio of Heramb Devbhankar - Software Engineer from USA. Explore projects, skills, and achievements in full-stack development, AI, and cutting-edge technologies." />
-        <meta name="theme-color" content="#000000" />
-        <link rel="canonical" href="https://heramb.tech" />
-        <link rel="alternate" hrefLang="en" href="https://heramb.tech" />
-        <meta property="og:title" content="Heramb Devbhankar | Software Engineer & Developer" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://heramb.tech" />
-        <meta property="og:site_name" content="Heramb Devbhankar Portfolio" />
-        <meta property="og:description" content="Discover the portfolio of Heramb Devbhankar - experienced software engineer with expertise in full-stack development, AI, and modern technologies." />
-        <meta name="twitter:title" content="Heramb Devbhankar | Software Engineer & Developer" />
-        <meta name="twitter:description" content="Portfolio of Heramb Devbhankar - Software Engineer from USA" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Heramb Devbhankar",
-              "url": "https://heramb.tech",
-              "jobTitle": "Software Engineer",
-              "sameAs": [
-                "https://github.com",
-                "https://linkedin.com",
-                "https://twitter.com"
-              ],
-              "description": "Software Engineer from USA with expertise in full-stack development, AI, and modern technologies"
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Heramb Devbhankar Portfolio",
-              "url": "https://heramb.tech",
-              "description": "Portfolio of Heramb Devbhankar - Software Engineer from USA",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "https://heramb.tech/search?q={search_term_string}"
-                },
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className={`${orbitron.variable} ${eduNSW.variable}`}>
-        <Theme>
-          <Nav />
+      <body className={orbitron.variable}>
+        <Providers>
+          <Sidebar />
           <main>{children}</main>
-          <ScrollUp />
+          <ScrollToTop />
           <Footer />
-        </Theme>
-        {/* <HeadScript /> */}
+        </Providers>
+        <Analytics measurementId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );
