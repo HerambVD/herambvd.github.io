@@ -48,7 +48,7 @@ src/shared/   reusable, domain-free code: ui/, lib/, config/
 - Inside a slice, code is split into segments: `model/` (data, types), `ui/` (components), `api/` (network) and `lib/` (helpers).
 - Tests sit next to the code they test (`*.test.ts(x)`).
 
-These rules are enforced by ESLint (`no-restricted-imports` in `.eslintrc.json`), so `npm run lint` fails on a violation.
+These rules are enforced by ESLint (`no-restricted-imports` in `eslint.config.mjs`), so `npm run lint` fails on a violation.
 
 ## Google Analytics
 

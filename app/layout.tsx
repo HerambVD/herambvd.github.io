@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Orbitron } from "next/font/google";
 import { profile, socialLinks } from "@/entities/profile";
 import { Analytics } from "@/features/analytics";
@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.ico" },
   manifest: "/manifest.json",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent" },
+};
+
+export const viewport: Viewport = {
   themeColor: "#000000",
 };
 

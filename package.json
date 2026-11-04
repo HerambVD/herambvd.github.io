@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@14 out",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -16,11 +16,11 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.456.0",
-    "next": "^13.5.8",
-    "next-themes": "^0.2.1",
+    "next": "^16.4.2",
+    "next-themes": "^0.4.6",
     "notyf": "^3.10.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-icon-cloud": "^4.1.4",
     "simple-icons": "^16.35.0",
     "tailwind-merge": "^2.5.4"
@@ -28,21 +28,22 @@
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.2",
     "jsdom": "^26.1.0",
-    "postcss": "^8",
-    "tailwindcss": "^3",
+    "postcss": "^8.5.31",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5",
-    "vitest": "^3.2.4"
+    "vite": "^7.3.7",
+    "vitest": "^4.1.12"
   },
   "engines": {
-    "node": ">=18.17"
+    "node": ">=20.9"
   }
 }

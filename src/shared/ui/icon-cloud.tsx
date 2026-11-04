@@ -46,7 +46,6 @@ export default function IconCloud({ icons }: { icons: SimpleIcon[] }) {
   );
 
   return (
-    // @ts-expect-error react-icon-cloud's typings don't accept React 18 children.
     <Cloud {...cloudProps}>
       <>{rendered}</>
     </Cloud>
