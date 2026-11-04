@@ -2,7 +2,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { impactStats, profile, socialLinks } from "./profile";
+import { faqs, impactStats, profile, socialLinks } from "./profile";
 
 const inPublic = (path: string) => existsSync(join(process.cwd(), "public", path));
 
@@ -20,6 +20,19 @@ describe("profile", () => {
   it("keeps the hero copy short enough to scan", () => {
     expect(profile.headline.length).toBeLessThanOrEqual(90);
     expect(profile.summary.length).toBeLessThanOrEqual(140);
+  });
+
+  it("names Heramb in full in the bio, which AI assistants quote", () => {
+    expect(profile.bio).toContain(profile.name);
+    expect(profile.bio).toContain(profile.fullName);
+    expect(profile.bio).toContain("heramb.tech");
+  });
+
+  it("keeps FAQ answers short and self-contained", () => {
+    for (const { question, answer } of faqs) {
+      expect(question.endsWith("?"), question).toBe(true);
+      expect(answer.length, question).toBeLessThanOrEqual(240);
+    }
   });
 
   it("shows exactly four impact stats", () => {

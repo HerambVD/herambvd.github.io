@@ -9,7 +9,10 @@ type SocialLinksProps = {
   iconClassName?: string;
 };
 
-/** Row of icon links to social profiles. External links open in a new tab. */
+/**
+ * Row of icon links to social profiles. External links open in a new tab and carry
+ * rel="me", which tells crawlers these profiles belong to the owner of this site.
+ */
 export default function SocialLinks({ withEmail = false, className, linkClassName, iconClassName }: SocialLinksProps) {
   const links = withEmail ? [...socialLinks, emailLink] : socialLinks;
   return (
@@ -22,7 +25,7 @@ export default function SocialLinks({ withEmail = false, className, linkClassNam
               href={href}
               aria-label={label}
               target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
+              rel={external ? "me noopener noreferrer" : undefined}
               className={cn("block transition-colors", linkClassName)}
             >
               <Icon className={cn("h-5 w-5", iconClassName)} aria-hidden="true" />

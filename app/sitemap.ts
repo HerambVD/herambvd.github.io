@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { profile } from "@/entities/profile";
 import { ROUTES, SITE_URL } from "@/shared/config/site";
 
 // Generated once at build time (required for `output: "export"`).
@@ -11,5 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency,
     priority,
+    // The profile photo helps image results for the name point to this site.
+    ...(path === "/" && { images: [`${SITE_URL}${profile.photo}`] }),
   }));
 }

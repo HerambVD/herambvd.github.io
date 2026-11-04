@@ -29,7 +29,7 @@ const Portrait = () => (
       {/* eslint-disable-next-line @next/next/no-img-element -- static export, no image optimizer */}
       <img
         src={profile.photo}
-        alt={profile.name}
+        alt={`${profile.name}, ${profile.title}`}
         width={240}
         height={240}
         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"

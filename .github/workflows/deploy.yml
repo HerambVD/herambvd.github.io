@@ -46,6 +46,8 @@ jobs:
         env:
           # Set under Settings → Secrets and variables → Actions → Variables.
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          NEXT_PUBLIC_BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
 
       - name: Copy CNAME into the build
         run: cp CNAME out/CNAME
@@ -67,3 +69,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Checkout code (for the IndexNow script and key)
+        uses: actions/checkout@v4
+
+      - name: Notify search engines via IndexNow (Bing, Yandex; feeds ChatGPT search, DuckDuckGo)
+        # Never fail a deploy because a search engine is slow or down.
+        continue-on-error: true
+        run: node scripts/submit-indexnow.mjs https://www.heramb.tech

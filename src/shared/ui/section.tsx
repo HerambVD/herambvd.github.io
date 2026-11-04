@@ -8,11 +8,14 @@ type SectionProps = {
   subtitle?: string;
   /** Grey background, to alternate with the plain background between sections. */
   muted?: boolean;
+  /** Use "h1" when the section is the main content of its page. */
+  headingLevel?: "h1" | "h2";
   children: React.ReactNode;
 };
 
 /** Standard page section: anchor id, eyebrow label, centered heading, optional subtitle. */
-export default function Section({ id, eyebrow, title, subtitle, muted = false, children }: SectionProps) {
+export default function Section({ id, eyebrow, title, subtitle, muted = false, headingLevel = "h2", children }: SectionProps) {
+  const Heading = headingLevel;
   return (
     <section
       id={id}
@@ -24,9 +27,9 @@ export default function Section({ id, eyebrow, title, subtitle, muted = false, c
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-cyan-400">
             {eyebrow}
           </p>
-          <h2 id={`${id}-title`} className="font-orbitron text-3xl font-bold text-blue-950 md:text-4xl dark:text-white">
+          <Heading id={`${id}-title`} className="font-orbitron text-3xl font-bold text-blue-950 md:text-4xl dark:text-white">
             {title}
-          </h2>
+          </Heading>
           {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
         </header>
         {children}

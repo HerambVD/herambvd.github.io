@@ -4,6 +4,8 @@ import { profile, SocialLinks } from "@/entities/profile";
 import { ContactForm } from "@/features/contact-form";
 import { DownloadResumeButton } from "@/features/download-resume";
 import { Card } from "@/shared/ui/card";
+import JsonLd from "@/shared/ui/json-ld";
+import { contactStructuredData } from "../lib/structured-data";
 
 type ContactItem = { icon: LucideIcon; label: string; value: string; href?: string };
 
@@ -17,6 +19,7 @@ export const CONTACT_ITEMS: ContactItem[] = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background px-6 py-20 md:px-10">
+      <JsonLd data={contactStructuredData()} />
       <header className="mx-auto mb-12 max-w-2xl text-center">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-cyan-400">Contact</p>
         <h1 className="font-orbitron text-4xl font-bold text-blue-950 md:text-5xl dark:text-white">Let&apos;s talk</h1>

@@ -58,7 +58,38 @@ Analytics loads only when the `NEXT_PUBLIC_GA_MEASUREMENT_ID` environment variab
 
 `.github/workflows/deploy.yml` runs lint, tests and the build on every push and pull request to `master`. On pushes to `master` it also deploys `./out` to GitHub Pages. This requires **Settings → Pages → Source** to be **GitHub Actions**.
 
-## SEO
+## Search, answer engines and AI (SEO · AEO · GEO)
 
-- Titles, descriptions and canonical URLs come from each page's `metadata` export. Shared defaults and the JSON-LD live in `app/layout.tsx`.
-- `sitemap.xml` and `robots.txt` are generated from `app/sitemap.ts` and `app/robots.ts`. To add a page to the sitemap, add it to `ROUTES` in `lib/site.ts`.
+What the site does to be found for "Heramb Devbhankar", "Devbhankar", "heramb.tech" and related searches, by search engines and AI assistants:
+
+| Area | Where |
+| --- | --- |
+| **Identity facts**: full name, name variants, factual bio, FAQ | `src/entities/profile/model/profile.ts` (single source for everything below) |
+| **Structured data**: `ProfilePage` + `Person` (home), `FAQPage` (home), `ItemList` (projects), `ContactPage`, site-wide `WebSite`; all linked by `@id` | `src/entities/*/lib/structured-data.ts`, `src/views/*/lib/structured-data.ts`, `app/layout.tsx` |
+| **Visible FAQ**: short, quotable answers for answer engines | `src/widgets/faq` |
+| **llms.txt**: Markdown summary for AI assistants | `app/llms.txt/` → `/llms.txt` |
+| **Crawler access**: all crawlers allowed; major AI crawlers listed explicitly | `app/robots.ts`, `AI_CRAWLERS` in `src/shared/config/site.ts` |
+| **Sitemap** with the profile photo for image search | `app/sitemap.ts` |
+| **Share card** (1200×630, used by LinkedIn, X, Slack and search previews) | `app/og.png/` → `/og.png` |
+| **Titles, descriptions, canonical URLs, Open Graph** for every page | `app/layout.tsx`, `src/shared/lib/page-metadata.ts` |
+| **IndexNow**: Bing, Yandex, Naver and Seznam are notified after every deploy (Bing also feeds DuckDuckGo and ChatGPT search) | `scripts/submit-indexnow.mjs`, key file `public/<key>.txt`, deploy workflow |
+| **Ownership verification** for Google and Bing | Repository variables `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION` |
+
+### One-time setup (after the site is live)
+
+1. **Google Search Console** (search.google.com/search-console): add the property `https://www.heramb.tech`, choose the "HTML tag" method, and save the `content="..."` value as the repository variable `GOOGLE_SITE_VERIFICATION`. Redeploy, click Verify, then submit `sitemap.xml`.
+2. **Bing Webmaster Tools** (bing.com/webmasters): you can import the site from Search Console, or use the HTML tag method with the `BING_SITE_VERIFICATION` variable. Submit `sitemap.xml`. This also covers DuckDuckGo, Yahoo and ChatGPT search.
+3. Test the structured data with Google's Rich Results Test and validator.schema.org.
+
+### Off-site signals (these matter as much as the code)
+
+Search engines and AI models decide who "Heramb Devbhankar" is by checking that many sources agree. Use the same name, title and link everywhere:
+
+- **LinkedIn**: put `https://www.heramb.tech` in the Website field and "Senior Software Engineer at Apollo Global Management" in the headline.
+- **GitHub**: set the profile Website to heramb.tech, and add a profile README (repo `HerambVD/HerambVD`) with your name, title and a link back.
+- **PyPI**: add `https://www.heramb.tech` as the Homepage URL of `spoken2written`.
+- **Medium, X, Instagram**: link to heramb.tech in each bio.
+- Once Google shows a Knowledge Panel for your name, claim it ("Claim this knowledge panel").
+
+Ranking for the exact name "Heramb Devbhankar" or "heramb.tech" is very achievable. "Heramb" alone also refers to the Hindu deity Heramba (a form of Ganesha), so a #1 result for that single word can't be guaranteed.
+
